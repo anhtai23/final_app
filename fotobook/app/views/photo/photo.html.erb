@@ -1,30 +1,30 @@
 <div>
-	<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
-		<div class="container">
-			<a class="navbar-brand" href="#">Fotobook</a>
-			<form class="form-inline">
-				<input class="form-control mr-sm-2" type="search" placeholder="Search Photo/Album" aria-label="Search">
-			</form>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ml-auto" >
-					<li lass="nav-item "> 
-						<img src="/assets/img0.jpg" class="rounded-circle" alt="icon-acount"></li>
-						<!-- <li class="nav-item active">
-							<a class="nav-link scroll-link" href="#">Tai-Anh</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link scroll-link text-light" href="#@@">Logout</a> -->
-							<%= link_to "Log Out"  , logout_path , {class: "nav-link scroll-link text-light"} %>
-							
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</div> 
+  <nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Fotobook</a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Photo/Album" aria-label="Search">
+      </form>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto" >
+          <li lass="nav-item "> 
+            <img src="/assets/img0.jpg" class="rounded-circle" alt="icon-acount"></li>
+            <li class="nav-item active">
+              <%= link_to "#{current_user.username}" ,user_path(current_user), class: "nav-link scroll-link" %>
+            </li>
+
+            <li class="nav-item">
+             <!--  <a class="nav-link scroll-link text-light" href="#@@">Logout</a> -->
+             <%= link_to "Log Out"  , logout_path , {class: "nav-link scroll-link text-light"} %>
+           </li>
+         </ul>
+       </div>
+     </div>
+   </nav>
+ </div>
 	<div class="row content">
 		<div class="col-lg-2 col-2 col-sm-2 col-xl-2" >
 			<p><a href="#">Feeds </a></p>
@@ -39,7 +39,7 @@
 					</div>
 
 					<div class="col-md-9" alt="icon-acount">		
-						<button class="btn btn-sm bg-success menuxx"><small >Edit-Profile</small></button>
+						<button class=" btn btn-success menuxx"><a href="/edit">Edit-Profile</a></button>
 						<h2>TAI-ANH</h2>
 						<div class="row nav nav-tabs">
 							<div class="col-md-3 nav-item">
@@ -64,26 +64,27 @@
 							</div>
 						</div>
 					</div>
-					<div class="d-flex flex-wrap ">
-							<img src="/assets/img7.jpg" class=" image">
-							<img src="/assets/img8.jpg" class=" image">
-							<img src="/assets/img9.jpg" class=" image">
-							<img src="/assets/img10.jpg" class=" image">
-					</div>
-						<div class="d-flex flex-wrap ">
-							<img src="/assets/img7.jpg" class=" image">
-							<img src="/assets/img8.jpg" class=" image">
-							<img src="/assets/img9.jpg" class=" image">
-							<img src="/assets/img10.jpg" class=" image">
-					</div>
-						<div class="d-flex flex-wrap ">
-							<img src="/assets/img7.jpg" class=" image">
-							<img src="/assets/img8.jpg" class=" image">
-							<img src="/assets/img9.jpg" class=" image">
-							<img src="/assets/img10.jpg" class=" image">
-					</div>
+				</div>
+				<div class="d-flex justify-content-end">
+					<button class="btn btn-success menuxx1">Add Album</button>
+					<!-- <button class="btn btn-danger">Add Album</button> -->	
+				</div>
+				<div class="d-flex flex-wrap ">
+					<img src="/assets/img7.jpg" class=" image">
+					<img src="/assets/img8.jpg" class=" image">
+					<img src="/assets/img9.jpg" class=" image">
+					<img src="/assets/img10.jpg" class=" image">
+					<img src="/assets/img7.jpg" class=" image">
+					<img src="/assets/img8.jpg" class=" image">
+					<img src="/assets/img9.jpg" class=" image">
+					<img src="/assets/img10.jpg" class=" image">
+					<img src="/assets/img7.jpg" class=" image">
+					<img src="/assets/img8.jpg" class=" image">
+					<img src="/assets/img9.jpg" class=" image">
+					<img src="/assets/img10.jpg" class=" image">
 				</div>
 			</div>
 		</div>
+	</div>
 
 

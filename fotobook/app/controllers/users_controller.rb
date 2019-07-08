@@ -19,7 +19,25 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    puts @user
   end
+  def new_arr(user)
+
+    @arr = []
+    @arr = @user.photos.order(:created_at).map{|x| x.image}
+    
+  end
+  # def arr_photos_on_album(album)
+  #   @arr1 = []
+  #   @arr1 = album.photos.order(:created_at).map{|x| x.link}
+  # end
+
+  def new_arr1(user)
+      new_arr(user)
+      @album =@user.albums.includes(:photos).order(:created_at).map{|x| x.photos.map { |y| y.image}}.flatten
+  end
+  helper_method :new_arr
+  helper_method :new_arr1 #phuong thuc dung de goi lai 1 cach de dang 
 
   # POST /users
   # POST /users.json
@@ -34,6 +52,19 @@ class UsersController < ApplicationController
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+
+  #---------This function is to update profile-----------------#
+  def editProfile
+    edit = User.new(edit_user_params)
+    @user.username = edit.username
+    @user.email = edit.email
+    if (@user.save)
+      
+      redirect_to user_show_url
+    else
     end
   end
 
@@ -70,5 +101,9 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:username, :password, :password_confirmation, :email, :role)
+    end
+
+    def edit_user_params
+      params.require(:user).permit(:username, :email)
     end
 end

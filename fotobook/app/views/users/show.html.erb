@@ -1,19 +1,73 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
-</p>
+	<div class="row content">
+		<div class="col-lg-2 col-2 col-sm-2 col-xl-2" >
+			<p><a href="#">Feeds </a></p>
+			<p><a href="#">Discover</a></p>
+		</div>	
+		<div class="col-lg-6 col-12 col-sm-12 col-xl-6 ">
+			<div class="container">
+				<div class="row">
+					<!--Avatar-->
+					<div class="col-md-3 " alt="icon-acount" >
+						<img src="/assets/photo.jpg" class="rounded-circle img">
+					</div>
+							
+					<div class="col-md-9" alt="icon-acount">		
+						<button class=" btn btn-success menuxx"><!-- a href="/edit">Edit-Profile</a> --><%=link_to "Edit-Profile",edit_user_path %></button>
+						<h2>TAI-ANH</h2>
+						<div class="row nav nav-tabs">
+							<div class="col-md-3 nav-item">
+								<li>
+									<a class="nav-link active" data-toggle="tab" href="#photo"><%= @user.photos.size + @user.albums.includes(:photos).size %> PHOTOS</a>
+								</li>
+							</div>
+							<div class="col-md-3 nav-item">
+								<li>
+									<a class="nav-link" data-toggle="tab" href="#album"><%= @user.albums.size%>ALBUMS</a>
+								</li>
+							</div>
+							<div class="col-md-3 nav-item">
+								<li>
+									<a class="nav-link" data-toggle="tab" href="#album">FOLLOWINGS</a>
+								</li>
+							</div>
+							<div class="col-md-3 nav-item">
+								<li>
+									<a class="nav-link" data-toggle="tab" href="#follower">FOLLOWERS</a>
+								</li>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="d-flex justify-content-end">
+					<button class="btn btn-success menuxx1">Add Album</button>
+					<!-- <button class="btn btn-danger">Add Album</button> -->
+									
+		
+				</div>
+				<div class="d-flex flex-wrap ">
+					<!-- <img src="/assets/img7.jpg" class=" image">
+					<img src="/assets/img8.jpg" class=" image">
+					<img src="/assets/img9.jpg" class=" image">
+					<img src="/assets/img10.jpg" class=" image">
+					<img src="/assets/img7.jpg" class=" image">
+					<img src="/assets/img8.jpg" class=" image">
+					<img src="/assets/img9.jpg" class=" image">
+					<img src="/assets/img10.jpg" class=" image">
+					<img src="/assets/img7.jpg" class=" image">
+					<img src="/assets/img8.jpg" class=" image">
+					<img src="/assets/img9.jpg" class=" image">
+					<img src="/assets/img10.jpg" class=" image"> -->
+				<%= render 'users/showhinh', users: @user %>
+				<%= render 'users/showhinh1', users: @user %>
+			
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', root_path %>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+

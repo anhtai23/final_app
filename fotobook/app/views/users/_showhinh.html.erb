@@ -1,0 +1,14 @@
+<% if @user.photos.any? %>
+
+<% for i in 0...@user.photos.size %>
+
+<div class="col-lg-3 p-3">
+   <%= image_tag new_arr(current_user)[i], class: 'image' %>
+
+   
+</div>
+
+<% end %>
+<% end %>
+
+
