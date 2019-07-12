@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-
+  get 'newalbum', to: 'album#newalbum', as: 'newalbum'
+  
   #-----------------POST---------------------------#
   post 'editProfile', to: 'users#editProfile'
   # get 'photo' , to: 'users#photo', as: 'photo'
